@@ -1,0 +1,89 @@
+---
+title: "What Happens When Your AI Recommends an FDA-Rejected Drug"
+date: "2026-05-02"
+author: "Aprilio Research"
+category: "ai_medicine"
+description: "In our study, Perplexity recommended a drug combination rejected twice by the FDA. Claude suggested a withdrawn medication. This isn't just an accuracy problem — it's a patient safety problem."
+keyTakeaways:
+  - "Perplexity recommended camrelizumab + rivoceranib for hepatocellular carcinoma — a combination rejected twice by the FDA"
+  - "Claude 4.6 listed tazemetostat for follicular lymphoma — withdrawn March 9, 2026 after a safety signal for MDS and acute leukemia"
+  - "DeepSeek recommended sintilimab — available only in China, not the United States"
+  - "Every frontier model missed zongertinib as first-line therapy for ERBB2-mutant NSCLC and sevabertinib entirely"
+---
+
+## A Drug the FDA Rejected — Twice
+
+On March 13, 2025, the FDA issued its second Complete Response Letter (CRL) for the combination of camrelizumab and rivoceranib in unresectable hepatocellular carcinoma (HCC).<sup>2</sup> The first CRL came months earlier. The FDA's concerns were significant enough to reject the application twice.
+
+In our study, when asked about first-line systemic therapy for hepatocellular carcinoma, Perplexity recommended this exact combination — camrelizumab + rivoceranib — as a treatment option.<sup>1</sup>
+
+This isn't a subtle error. This is an AI system recommending a drug combination that the U.S. regulatory authority explicitly declined to approve. A physician relying on this recommendation could attempt to prescribe a regimen that is not available in the United States and has been deemed insufficiently supported for approval.
+
+## A Withdrawn Drug for Lymphoma
+
+Tazemetostat (Tazverik) received accelerated approval for relapsed/refractory follicular lymphoma in 2020. On March 9, 2026, Ipsen voluntarily withdrew tazemetostat from the U.S. market after a post-marketing safety signal identified an increased risk of myelodysplastic syndrome (MDS) and acute myeloid leukemia (AML).<sup>3</sup>
+
+When we asked Claude 4.6 about second-line therapy options for follicular lymphoma — tested after the withdrawal date — it listed tazemetostat as a recommended option.<sup>1</sup>
+
+The clinical consequence: a physician could prescribe a medication that has been removed from the market due to a serious safety signal. The patient would either be unable to obtain it, or — in a worst-case scenario — could receive remaining stock of a drug with a known risk of secondary malignancy.
+
+## A Drug Unavailable in the U.S.
+
+DeepSeek-V3.2 recommended sintilimab for hepatocellular carcinoma.<sup>1</sup> Sintilimab is an anti-PD-1 monoclonal antibody developed by Innovent Biologics and Eli Lilly. It is approved and widely used in China.
+
+It has never been approved by the FDA. It is not available in the United States. An American oncologist cannot prescribe it for their patient.
+
+This reflects a training data bias: DeepSeek, trained predominantly on Chinese-language medical literature, naturally surfaces treatments from the Chinese market. But for a U.S.-based physician, this recommendation is useless at best and misleading at worst.
+
+## The Complete Failure Matrix
+
+We tested six clinical questions across five frontier models. The results reveal systematic failures:
+
+| Clinical Question | Grounded Retrieval | GPT-5.4 | Claude 4.6 | Perplexity | DeepSeek-V3.2 | Gemini 3.1 Pro |
+|---|---|---|---|---|---|---|
+| First-line ERBB2-mutant NSCLC | Zongertinib (Feb 2026 approval)<sup>4</sup> | Missed | Missed | Missed | Missed | Missed |
+| Second-line FGFR2+ cholangiocarcinoma | Sevabertinib (Nov 2025 approval)<sup>5</sup> | Missed | Missed | Missed | Missed | Missed |
+| First-line HCC systemic therapy | Current NCCN recs with citations | Incomplete | Incomplete | FDA-rejected drug<sup>2</sup> | China-only drug | Incomplete |
+| Second-line follicular lymphoma | Current options (excl. withdrawn) | Incomplete | Withdrawn drug<sup>3</sup> | Incomplete | Incomplete | Incomplete |
+| First-line metastatic TNBC (PD-L1+) | Pembrolizumab + chemo with citations | Partially correct | Partially correct | Partially correct | Partially correct | Partially correct |
+| Adjuvant Stage III melanoma (BRAF V600+) | Current guideline recs with page refs | Partially correct | Partially correct | Partially correct | Partially correct | Partially correct |
+
+Not a single frontier model provided complete, current, and safe recommendations across all six questions. Every model had at least one dangerous failure mode.
+
+## Why This Happens
+
+Large language models fail on clinical questions for three structural reasons:
+
+**1. Training data staleness.** Models are trained on data with a cutoff. Even models with internet access (like Perplexity) may surface cached or outdated results. The zongertinib approval on February 26, 2026 was missed by all five models when tested 25 days later.<sup>1</sup>
+
+**2. No mechanism for negative knowledge.** Models have no reliable way to know that a drug has been withdrawn. Tazemetostat existed in their training data as an approved therapy. Nothing in their architecture allows them to learn that it was subsequently removed from the market.
+
+**3. Geographic and regulatory confusion.** Models trained on global data conflate regulatory environments. Sintilimab is a real drug with real efficacy data — in China. The model has no mechanism to filter by regulatory jurisdiction.
+
+## The Clinical Readiness Problem
+
+Recent systematic evaluations of AI readiness for clinical decision-making report disturbingly low scores. Studies examining LLM performance on oncology-specific questions find clinical readiness scores as low as 2.7–6.0 on a 10-point scale, with particular failures in treatment currency and regulatory awareness.<sup>6</sup>
+
+These aren't theoretical concerns. As health systems consider deploying AI tools in clinical workflows, the gap between "impressive demo" and "safe for patient care" remains substantial.
+
+## How Grounded Retrieval Avoids These Failures
+
+Grounded Retrieval's architecture is specifically designed to prevent each failure mode:
+
+- **Staleness:** Real-time internet search via DuckDuckGo captures late-breaking approvals and withdrawals
+- **Negative knowledge:** NCCN guidelines are updated to reflect withdrawals; structured navigation ensures current content
+- **Geographic confusion:** NCCN guidelines are U.S.-specific by definition; the system operates within a single regulatory framework
+- **Citation:** Page-level references enable direct verification against source documents
+
+The system doesn't ask the LLM to recall treatment information. It asks the LLM to understand the clinical question, then retrieves the answer from authoritative, current sources. The distinction is fundamental — and it's why a mid-tier model with the right architecture outperforms every frontier model on clinical accuracy.
+
+---
+
+## References
+
+1. Takahashi G, Mengistu E, Tarshizi E, Van Benschoten A. Building a Large Language Model Assistant to Maintain Currency with Medical Oncology Guidelines. Under review, npj Digital Medicine.
+2. FDA Issues Second Camrelizumab/Rivoceranib Complete Response Letter in Hepatocellular Carcinoma. CancerNetwork. March 2025.
+3. Ipsen Voluntarily Withdraws U.S. Marketing Authorization for Tazverik (tazemetostat). Ipsen Press Release. March 9, 2026.
+4. FDA grants accelerated approval to zongertinib for non-small cell lung cancer with an activating ERBB2 (HER2) mutation. FDA.gov. February 26, 2026.
+5. FDA grants accelerated approval to sevabertinib for cholangiocarcinoma with FGFR2 gene fusion or rearrangement. FDA.gov. November 19, 2025.
+6. Frontiers in Artificial Intelligence. AI for Evidence-Based Treatment Recommendation in Oncology: A Systematic Evaluation. 2025.

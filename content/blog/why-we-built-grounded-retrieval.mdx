@@ -1,0 +1,94 @@
+---
+title: "Why We Built Grounded Retrieval"
+date: "2026-04-28"
+author: "Aprilio Research"
+category: "grounded_retrieval"
+description: "The origin story of Grounded Retrieval — built by a practicing medical oncologist who needed better answers than frontier AI models could provide."
+keyTakeaways:
+  - "A mid-tier model (GPT-4.1) with the right architecture outperformed GPT-5.4, Claude 4.6, Gemini 3.1 Pro, DeepSeek-V3.2, and Perplexity on real clinical questions"
+  - "Foundation models hallucinate, serve stale information, and recommend treatments that have been withdrawn or rejected by the FDA"
+  - "Grounded Retrieval combines structured NCCN guideline navigation with real-time internet search, using the LLM for semantic extraction — not fact recall"
+  - "The system provides page-level citations, enabling direct source verification"
+---
+
+## The Problem Every Oncologist Knows
+
+Dr. Gary Takahashi is a practicing medical oncologist. He treats patients with lung cancer, hepatocellular carcinoma, melanoma, lymphoma, and cholangiocarcinoma — each governed by complex treatment algorithms that change throughout the year.
+
+NCCN Clinical Practice Guidelines, the de facto standard of care in the United States, update on a rolling basis. The NCCN publishes over 80 guidelines covering virtually every cancer type, with major guidelines receiving 4–8 updates annually.<sup>3</sup> Each update can introduce new first-line therapies, remove options based on safety signals, or restructure entire treatment algorithms based on new trial data.
+
+The tools available to stay current are inadequate. Manual guideline review is time-consuming. Conference abstracts trail real-world approvals. And large language models — despite their promise — fail in ways that are particularly dangerous in clinical oncology.
+
+## What Frontier Models Get Wrong
+
+Dr. Takahashi built Grounded Retrieval because he tested the frontier models on real clinical questions and found their answers unacceptable for patient care.
+
+In our study, we posed six clinical questions to five foundation models: GPT-5.4, Claude 4.6, Gemini 3.1 Pro, DeepSeek-V3.2, and Perplexity.<sup>1</sup> The results were consistent:
+
+- **Every model missed zongertinib** as first-line therapy for ERBB2-mutant NSCLC — a drug that received FDA accelerated approval on February 26, 2026, with a 76% objective response rate.<sup>2</sup> When tested 25 days later, none of the five frontier models included it in their recommendations.
+- **Every model missed sevabertinib** for FGFR2-positive cholangiocarcinoma, approved November 19, 2025.
+- **Perplexity recommended camrelizumab + rivoceranib** for hepatocellular carcinoma — a combination the FDA rejected twice with complete response letters.
+- **Claude recommended tazemetostat** for follicular lymphoma — a drug voluntarily withdrawn on March 9, 2026 after a safety signal for myelodysplastic syndrome and acute leukemia.
+- **DeepSeek recommended sintilimab** — an anti-PD-1 antibody available only in China, not approved or available in the United States.
+
+These aren't edge cases. These are routine clinical questions that oncologists face daily.
+
+## The Architecture: Retrieval Over Recall
+
+Grounded Retrieval was designed around a core insight: the LLM should extract meaning from the query, not recall facts about treatment. Clinical facts belong in authoritative sources. The LLM's role is semantic understanding — parsing what the clinician is actually asking.
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                    Clinical Query                         │
+└──────────────────────────┬──────────────────────────────┘
+                           │
+                           ▼
+┌─────────────────────────────────────────────────────────┐
+│           Semantic Extraction (GPT-4.1)                   │
+│   Cancer type · Biomarkers · Treatment line · Context    │
+└──────────────────────────┬──────────────────────────────┘
+                           │
+              ┌────────────┴────────────┐
+              ▼                         ▼
+┌──────────────────────┐   ┌──────────────────────┐
+│  NCCN TOC Navigation │   │  Internet Search     │
+│  Section ID + Page   │   │  (DuckDuckGo)        │
+│  Content Extraction  │   │  Late-breaking       │
+└──────────┬───────────┘   └──────────┬───────────┘
+           │                          │
+           └────────────┬─────────────┘
+                        ▼
+┌─────────────────────────────────────────────────────────┐
+│         Synthesis with Page-Level Citations               │
+└─────────────────────────────────────────────────────────┘
+```
+
+The system uses a Thread Pool Executor to run NCCN guideline navigation and internet search in parallel. NCCN navigation isn't vector similarity — it's structured traversal through the table of contents, identifying the correct guideline, locating the relevant section, and extracting content with specific page numbers.
+
+## Why a Mid-Tier Model Wins
+
+A common assumption in AI is that bigger models produce better results. Our findings challenge this directly: GPT-4.1 — a mid-tier model by 2026 standards — with structured retrieval architecture outperformed every frontier model on clinical accuracy.
+
+The reason is architectural. Frontier models fail on clinical questions not because they lack capability, but because they:
+
+1. **Rely on training data** that becomes stale within weeks of guideline updates
+2. **Cannot verify currency** — they have no mechanism to know whether a drug has been withdrawn or a new therapy approved
+3. **Hallucinate with clinical plausibility** — their recommendations sound authoritative but may reference drugs unavailable in the U.S. or rejected by regulators
+
+Grounded Retrieval sidesteps these failure modes entirely. The LLM never needs to "know" the current standard of care — it only needs to understand what the clinician is asking, then retrieve the answer from authoritative sources.
+
+## What This Means for Clinical Practice
+
+The zongertinib case illustrates the stakes. On February 26, 2026, the FDA granted accelerated approval to zongertinib for adult patients with unresectable or metastatic NSCLC with activating ERBB2 (HER2) mutations.<sup>2</sup> The approval was based on HERIZON-Lung02, demonstrating a 76% objective response rate.
+
+Twenty-five days later, no frontier model included this as a first-line option. For the patient sitting across from an oncologist in March 2026, the gap between "AI-assisted" care and evidence-based care is not theoretical — it's the difference between receiving an effective targeted therapy and receiving an outdated recommendation.
+
+Grounded Retrieval was built to close this gap — not by building a better model, but by building a better system around the model.
+
+---
+
+## References
+
+1. Takahashi G, Mengistu E, Tarshizi E, Van Benschoten A. Building a Large Language Model Assistant to Maintain Currency with Medical Oncology Guidelines. Under review, npj Digital Medicine.
+2. FDA grants accelerated approval to zongertinib for non-small cell lung cancer with an activating ERBB2 (HER2) mutation. FDA.gov. February 26, 2026.
+3. NCCN Clinical Practice Guidelines in Oncology. National Comprehensive Cancer Network. nccn.org.
