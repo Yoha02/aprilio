@@ -15,7 +15,7 @@ export default function HowItWorks() {
             Structure first. Retrieval second. Synthesis last.
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-ink-muted">
-            Aprilio replaces vector guesswork with a dataset-specific harness—built once, reused continuously, and regenerated when its components fail.
+            Aprilio replaces vector guesswork with a dataset-specific harness, built once, reused continuously, and regenerated when its components fail.
           </p>
         </div>
 

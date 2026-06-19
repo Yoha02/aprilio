@@ -34,7 +34,7 @@ export default function Hero() {
             </motion.h1>
 
             <motion.p initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65, delay: 0.2 }} className="mt-8 max-w-xl text-lg leading-8 text-ink-muted sm:text-xl">
-              Knowledge changes. Models guess. Aprilio continuously turns fragmented sources into a living, structured intelligence layer—so every answer is current, traceable, and honest about its limits.
+              Knowledge changes. Models guess. Aprilio continuously turns fragmented sources into a living, structured intelligence layer, ensuring every answer is current, traceable, and honest about its limits.
             </motion.p>
 
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65, delay: 0.3 }} className="mt-9 flex flex-col gap-3 sm:flex-row">

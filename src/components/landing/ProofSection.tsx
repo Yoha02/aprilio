@@ -34,7 +34,7 @@ export default function ProofSection() {
           </div>
           <div className="lg:pb-2">
             <p className="max-w-2xl text-lg leading-8 text-ink-muted">
-              Generic models collapse the distance between “sounds plausible” and “is supported.” Aprilio keeps that distance visible—source by source, page by page, update by update.
+              Generic models collapse the distance between “sounds plausible” and “is supported.” Aprilio keeps that distance visible, source by source, page by page, update by update.
             </p>
           </div>
         </div>
@@ -98,7 +98,7 @@ export default function ProofSection() {
                       </p>
                       <div className="mt-5 rounded-xl border border-factum/25 bg-factum/10 p-3">
                         <p className="font-mono text-[9px] font-bold uppercase tracking-wider text-factum">Potentially conflicting information</p>
-                        <p className="mt-2 text-xs leading-5 text-white/65">FDA approval detected May 13, 2026—after the retrieved guideline revision.</p>
+                        <p className="mt-2 text-xs leading-5 text-white/65">FDA approval detected May 13, 2026, after the retrieved guideline revision.</p>
                       </div>
                     </div>
                     <div className="space-y-3">

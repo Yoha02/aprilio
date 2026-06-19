@@ -143,7 +143,7 @@ export default function FactumEngine() {
                     <motion.div key="factum" initial={{ opacity: 0, scale: 0.96, y: 12 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ type: 'spring', stiffness: 180, damping: 20 }} className="factum-shimmer w-full overflow-hidden rounded-[22px] border border-factum/55 bg-ink p-5 text-white shadow-[0_22px_55px_rgba(16,37,66,.25)]">
                       <div className="flex items-center justify-between gap-3"><span className="eyebrow text-factum">Factum 04</span><span className="rounded-full bg-success/20 px-2 py-1 font-mono text-[8px] font-bold text-success-light">VERIFIED</span></div>
                       <p className="mt-4 text-[14px] font-semibold leading-6 sm:text-[15px]">For older adults ineligible for intensive induction, the guideline-backed regimen set remains intact.</p>
-                      <p className="mt-3 text-[11px] leading-5 text-white/65">A newer FDA approval is isolated as a late-breaking update for clinician review—not silently merged into guideline consensus.</p>
+                      <p className="mt-3 text-[11px] leading-5 text-white/65">A newer FDA approval is isolated as a late-breaking update for clinician review, not silently merged into guideline consensus.</p>
                       <div className="mt-4 rounded-xl border border-factum/20 bg-factum/10 p-3"><p className="font-mono text-[8px] font-bold uppercase tracking-[0.1em] text-factum">Uncertainty boundary preserved</p><p className="mt-1 text-[9px] leading-4 text-white/60">No claim extends beyond retrieved evidence.</p></div>
                       <div className="mt-4 flex flex-wrap gap-2"><CitationDot color="bg-cyan" label="NCCN · exact pages" /><CitationDot color="bg-factum" label="FDA · 13 May 2026" /></div>
                     </motion.div>
@@ -154,9 +154,9 @@ export default function FactumEngine() {
           </div>
 
           <div className="mt-3 grid grid-cols-3 divide-x divide-ink/10 rounded-2xl border border-ink/8 bg-white/70 py-3 text-center">
-            <TraceMetric value={phase >= 1 ? '214' : '—'} label="pages mapped" />
-            <TraceMetric value={phase >= 3 ? '02' : '—'} label="sources reconciled" />
-            <TraceMetric value={phase >= 4 ? '00' : '—'} label="unsupported claims" />
+            <TraceMetric value={phase >= 1 ? '214' : '--'} label="pages mapped" />
+            <TraceMetric value={phase >= 3 ? '02' : '--'} label="sources reconciled" />
+            <TraceMetric value={phase >= 4 ? '00' : '--'} label="unsupported claims" />
           </div>
         </div>
       </div>
