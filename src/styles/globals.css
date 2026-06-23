@@ -148,33 +148,6 @@ samp {
   color: var(--color-ink);
 }
 
-.brand-mark {
-  display: inline-flex;
-  height: 34px;
-  min-width: 44px;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  border-radius: 11px;
-  background: var(--color-ink);
-  color: var(--color-cyan);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-}
-
-.brand-mark-bracket {
-  font-family: var(--font-mono);
-  font-size: 16px;
-  line-height: 1;
-}
-
-.brand-mark-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--color-factum);
-  box-shadow: 0 0 12px rgba(246, 200, 95, 0.8);
-}
-
 .soft-grid {
   background-image:
     linear-gradient(rgba(16, 37, 66, 0.045) 1px, transparent 1px),

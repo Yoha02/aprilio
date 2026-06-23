@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Container from '@/components/ui/Container'
+import { AprilioMark } from '@/components/BrandLogo'
 
 export default function PartnersCTA() {
   return (
@@ -9,6 +10,9 @@ export default function PartnersCTA() {
           <div className="absolute left-[8%] top-[18%] h-3 w-3 rounded-full bg-cyan shadow-[0_0_0_12px_rgba(95,225,230,.12)]" aria-hidden="true" />
           <div className="absolute bottom-[20%] right-[9%] h-3 w-3 rounded-full bg-factum shadow-[0_0_0_12px_rgba(246,200,95,.12)]" aria-hidden="true" />
           <div className="relative mx-auto max-w-3xl">
+            <div className="mx-auto mb-6 grid h-[76px] w-[76px] place-items-center rounded-[24px] border border-ink/10 bg-white/80 shadow-[0_18px_44px_rgba(16,37,66,.1)] backdrop-blur">
+              <AprilioMark size="large" />
+            </div>
             <p className="eyebrow text-cyan-deep">Build the intelligence layer</p>
             <h2 className="mt-5 text-4xl font-semibold leading-[1.02] tracking-[-0.055em] text-ink sm:text-5xl lg:text-6xl">
               Your knowledge already has structure. Let’s make it usable.

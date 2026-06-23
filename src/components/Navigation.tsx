@@ -4,16 +4,7 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { AnimatePresence, motion } from 'framer-motion'
 import { siteNavigation } from '@/content/site'
-
-function Mark() {
-  return (
-    <span className="brand-mark" aria-hidden="true">
-      <span className="brand-mark-bracket">[</span>
-      <span className="brand-mark-dot" />
-      <span className="brand-mark-bracket">]</span>
-    </span>
-  )
-}
+import { AprilioWordmark } from '@/components/BrandLogo'
 
 export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -42,11 +33,8 @@ export default function Navigation() {
             : 'border-white/70 bg-white/64 backdrop-blur-md'
         }`}
       >
-        <Link href="/" className="flex items-center gap-2.5" aria-label="Aprilio home">
-          <Mark />
-          <span className="font-[family-name:var(--font-heading)] text-lg font-bold tracking-[-0.03em] text-ink">
-            aprilio
-          </span>
+        <Link href="/" className="flex items-center" aria-label="Aprilio home">
+          <AprilioWordmark priority />
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex" aria-label="Primary navigation">

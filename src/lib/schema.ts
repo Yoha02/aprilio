@@ -4,7 +4,7 @@ export function organizationSchema() {
     '@type': 'Organization',
     name: 'Aprilio',
     url: 'https://aprilio.ai',
-    logo: 'https://aprilio.ai/icon.svg',
+    logo: 'https://aprilio.ai/brand/aprilio-icon.jpg',
     description:
       'Aprilio develops structurally grounded retrieval infrastructure that turns complex, changing knowledge bases into current, verifiable Factums with exact provenance.',
     foundingDate: '2025',

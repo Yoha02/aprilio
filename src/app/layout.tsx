@@ -28,6 +28,10 @@ export const metadata: Metadata = {
   },
   description:
     'Aprilio turns complex, changing knowledge bases into current, verifiable Factums with exact source provenance.',
+  icons: {
+    icon: '/brand/aprilio-icon.jpg',
+    apple: '/brand/aprilio-icon.jpg',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',

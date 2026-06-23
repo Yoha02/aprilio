@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { siteNavigation } from '@/content/site'
+import { AprilioWordmark } from '@/components/BrandLogo'
 
 export default function Footer() {
   return (
@@ -7,15 +8,8 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-5 py-12 sm:px-8 lg:px-10 lg:py-16">
         <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr_1fr]">
           <div>
-            <Link href="/" className="inline-flex items-center gap-2.5" aria-label="Aprilio home">
-              <span className="brand-mark" aria-hidden="true">
-                <span className="brand-mark-bracket">[</span>
-                <span className="brand-mark-dot" />
-                <span className="brand-mark-bracket">]</span>
-              </span>
-              <span className="font-[family-name:var(--font-heading)] text-xl font-bold tracking-[-0.03em] text-ink">
-                aprilio
-              </span>
+            <Link href="/" className="inline-flex items-center" aria-label="Aprilio home">
+              <AprilioWordmark placement="footer" />
             </Link>
             <p className="mt-5 max-w-sm text-sm leading-6 text-ink-muted">
               Grounded retrieval for knowledge that must stay current, traceable, and bounded.
