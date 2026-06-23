@@ -7,6 +7,12 @@ export const siteNavigation = [
 
 export const team = [
   {
+    initials: 'ET',
+    name: 'Ebrahim Tarshizi',
+    role: 'Operations & research',
+    bio: 'Academic partnerships, research coordination, and operational execution.',
+  },
+  {
     initials: 'GT',
     name: 'Gary Takahashi, MD',
     role: 'Clinical architecture',
@@ -23,12 +29,6 @@ export const team = [
     name: 'Eyoha Mengistu',
     role: 'Product & automation',
     bio: 'Product systems, automation, interface design, and market development.',
-  },
-  {
-    initials: 'ET',
-    name: 'Ebrahim Tarshizi',
-    role: 'Operations & research',
-    bio: 'Academic partnerships, research coordination, and operational execution.',
   },
 ]
 
