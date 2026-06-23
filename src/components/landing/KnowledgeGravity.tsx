@@ -64,7 +64,7 @@ export default function KnowledgeGravity() {
       <div className="absolute inset-[7%] rounded-full bg-cyan/[0.09] blur-3xl" aria-hidden="true" />
       <div className="absolute left-1/2 top-1/2 h-[72%] w-[72%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet/[0.075] blur-2xl" aria-hidden="true" />
 
-      <div className="absolute inset-x-[8%] top-[4%] z-20 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.1em] text-ink-faint">
+      <div className="absolute inset-x-[8%] top-[4%] z-20 flex items-center justify-between font-mono text-[11px] uppercase tracking-[0.09em] text-ink-faint">
         <span>Aprilio / Living knowledge field</span>
         <span className="flex items-center gap-2"><i className="trace-status-pulse h-1.5 w-1.5 rounded-full bg-success" /> continuously adapting</span>
       </div>
@@ -120,7 +120,7 @@ export default function KnowledgeGravity() {
         aria-hidden="true"
       >
         <span className="relative grid h-5 w-5 place-items-center rounded-full border border-cyan-deep/25"><i className="h-1.5 w-1.5 rounded-full bg-cyan-deep shadow-[0_0_0_4px_rgba(21,156,165,.12)]" /></span>
-        <span className="font-mono text-[10px] font-bold uppercase tracking-[0.09em] text-cyan-deep">Query intent</span>
+        <span className="font-mono text-[11px] font-bold uppercase tracking-[0.09em] text-cyan-deep">Query intent</span>
       </motion.div>
 
       {fragments.map((fragment, index) => (
@@ -152,11 +152,11 @@ export default function KnowledgeGravity() {
             <div className="flex items-center gap-2 sm:gap-2.5">
               <span className={`grid h-8 w-8 shrink-0 place-items-center rounded-xl border text-xs font-bold sm:h-9 sm:w-9 sm:text-sm ${source.color === 'cyan' ? 'border-cyan-deep/20 bg-cyan/15 text-cyan-deep' : source.color === 'violet' ? 'border-violet/20 bg-violet/10 text-violet' : source.color === 'factum' ? 'border-factum/35 bg-factum/20 text-gold-dark' : 'border-coral/25 bg-coral/10 text-coral'}`}>{source.mark}</span>
               <div className="min-w-0">
-                <p className={`font-mono text-[10px] font-bold tracking-[0.1em] ${source.color === 'cyan' ? 'text-cyan-deep' : source.color === 'violet' ? 'text-violet' : source.color === 'factum' ? 'text-gold-dark' : 'text-coral'}`}>{source.eyebrow}</p>
-                <p className="mt-1 text-[11px] font-semibold leading-4 tracking-[-0.01em] text-ink sm:text-sm">{source.title}</p>
+                <p className={`font-mono text-[11px] font-bold tracking-[0.09em] ${source.color === 'cyan' ? 'text-cyan-deep' : source.color === 'violet' ? 'text-violet' : source.color === 'factum' ? 'text-gold-dark' : 'text-coral'}`}>{source.eyebrow}</p>
+                <p className="mt-1 text-xs font-semibold leading-4 tracking-[-0.01em] text-ink sm:text-[15px]">{source.title}</p>
               </div>
             </div>
-            <p className="mt-2.5 border-t border-ink/8 pt-2.5 font-mono text-[10px] leading-4 text-ink-muted sm:text-[11px]">{source.meta}</p>
+            <p className="mt-2.5 border-t border-ink/8 pt-2.5 font-mono text-[11px] leading-4 text-ink-muted sm:text-xs">{source.meta}</p>
           </motion.button>
           )
         })}
@@ -167,14 +167,14 @@ export default function KnowledgeGravity() {
         transition={{ type: 'spring', stiffness: 140, damping: 18 }}
         className="absolute left-1/2 top-[49.2%] z-20 h-[178px] w-[178px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/18 bg-[#0d1b36]/95 p-4 shadow-[0_0_0_18px_rgba(95,225,230,.025),0_28px_80px_rgba(0,0,0,.38)] backdrop-blur-xl sm:h-[218px] sm:w-[218px] sm:p-5"
       >
-        <div className="flex items-center justify-between font-mono text-[10px] font-bold uppercase tracking-[0.08em] text-white/65"><span>ONTOHARNESS</span><span className="text-success-light">ACTIVE</span></div>
+        <div className="flex items-center justify-between font-mono text-[11px] font-bold uppercase tracking-[0.07em] text-white/70"><span>ONTOHARNESS</span><span className="text-success-light">ACTIVE</span></div>
         <div className="relative mx-auto mt-3 h-[80px] w-[142px] sm:mt-4 sm:h-[96px] sm:w-[170px]">
           <motion.span animate={{ x: phase === 1 ? 5 : 0 }} transition={{ duration: 0.7 }} className="absolute left-0 top-0 grid h-20 w-20 place-items-center rounded-full border border-cyan/45 bg-cyan/20 font-mono text-2xl font-bold text-cyan shadow-[0_0_35px_rgba(95,225,230,.2)] sm:h-24 sm:w-24 sm:text-[28px]">S</motion.span>
           <motion.span animate={{ x: phase === 1 ? -5 : 0 }} transition={{ duration: 0.7 }} className="absolute right-0 top-0 grid h-20 w-20 place-items-center rounded-full border border-purple-light/45 bg-violet/25 font-mono text-2xl font-bold text-purple-light shadow-[0_0_35px_rgba(119,104,216,.24)] sm:h-24 sm:w-24 sm:text-[28px]">M</motion.span>
           <span className="absolute left-1/2 top-1/2 grid h-7 w-7 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-factum/50 bg-ink text-factum shadow-[0_0_24px_rgba(246,200,95,.4)]"><i className="h-1.5 w-1.5 rounded-full bg-factum" /></span>
         </div>
-        <p className="mt-2 text-center font-mono text-[10px] font-bold uppercase tracking-[0.1em] text-white/90 sm:text-xs">Structure × meaning</p>
-        <div className="mt-2 flex items-center gap-2"><span className="h-px flex-1 bg-white/15" /><span className="font-mono text-[10px] font-bold tracking-[0.05em] text-white/65">NEUROSYMBOLIC</span><span className="h-px flex-1 bg-white/15" /></div>
+        <p className="mt-2 text-center font-mono text-[11px] font-bold uppercase tracking-[0.09em] text-white/90 sm:text-[13px]">Structure × meaning</p>
+        <div className="mt-2 flex items-center gap-2"><span className="h-px flex-1 bg-white/15" /><span className="font-mono text-[11px] font-bold tracking-[0.04em] text-white/70">NEUROSYMBOLIC</span><span className="h-px flex-1 bg-white/15" /></div>
       </motion.div>
 
       <motion.div
@@ -182,19 +182,19 @@ export default function KnowledgeGravity() {
         transition={{ duration: 0.6 }}
         className="absolute bottom-[1%] left-1/2 z-20 w-[210px] -translate-x-1/2 rounded-[18px] border border-factum/35 bg-factum px-4 py-3 text-ink shadow-[0_22px_60px_rgba(246,200,95,.18)] sm:w-[260px] sm:px-5 sm:py-4"
       >
-        <div className="flex items-center justify-between"><span className="font-mono text-[10px] font-bold uppercase tracking-[0.1em]">FACTUM / 04</span><span className="rounded-full bg-success px-2 py-1 font-mono text-[10px] font-bold text-white">VERIFIED</span></div>
-        <p className="mt-2 text-xs font-bold sm:text-sm">Current. Linked. Bounded.</p>
-        <div className="mt-2 flex gap-3 font-mono text-[10px] uppercase tracking-[0.04em] text-ink/70"><span>2 sources</span><span>0 unsupported claims</span></div>
+        <div className="flex items-center justify-between"><span className="font-mono text-[11px] font-bold uppercase tracking-[0.09em]">FACTUM / 04</span><span className="rounded-full bg-success px-2 py-1 font-mono text-[11px] font-bold text-white">VERIFIED</span></div>
+        <p className="mt-2 text-[13px] font-bold sm:text-[15px]">Current. Linked. Bounded.</p>
+        <div className="mt-2 flex gap-3 font-mono text-[11px] uppercase tracking-[0.03em] text-ink/70"><span>2 sources</span><span>0 unsupported claims</span></div>
       </motion.div>
 
-      <div className="absolute bottom-[9%] left-[8%] z-20 hidden items-center gap-2 rounded-full border border-ink/10 bg-white/72 px-3 py-2 font-mono text-[10px] uppercase tracking-[0.08em] text-ink-faint shadow-sm backdrop-blur md:flex">
-        <span className="grid h-4 w-4 place-items-center rounded-full border border-coral/30 text-[10px] text-coral">×</span> stale fragments rejected
+      <div className="absolute bottom-[9%] left-[8%] z-20 hidden items-center gap-2 rounded-full border border-ink/10 bg-white/72 px-3 py-2 font-mono text-[11px] uppercase tracking-[0.07em] text-ink-faint shadow-sm backdrop-blur md:flex">
+        <span className="grid h-4 w-4 place-items-center rounded-full border border-coral/30 text-[11px] text-coral">×</span> stale fragments rejected
       </div>
 
       <div className="absolute inset-x-[7%] bottom-[-4%] z-30 rounded-2xl border border-ink/10 bg-white/82 p-2.5 shadow-[0_16px_50px_rgba(16,37,66,.12)] backdrop-blur-xl sm:bottom-[-2%] sm:p-3">
         <div className="flex items-center justify-between gap-4">
-          <div className="flex items-center gap-2"><span className={`h-1.5 w-1.5 rounded-full ${interactiveSource ? 'bg-cyan-deep' : phase === 2 ? 'bg-factum' : phase === 3 ? 'bg-success' : 'bg-cyan-deep'}`} /><motion.span animate={{ opacity: 1, y: 0 }} className={`font-mono text-[10px] font-bold uppercase tracking-[0.08em] ${status.color}`}>{status.label}</motion.span></div>
-          <span className="hidden font-mono text-[10px] uppercase tracking-[0.06em] text-ink-muted sm:block">{status.detail}</span>
+          <div className="flex items-center gap-2"><span className={`h-1.5 w-1.5 rounded-full ${interactiveSource ? 'bg-cyan-deep' : phase === 2 ? 'bg-factum' : phase === 3 ? 'bg-success' : 'bg-cyan-deep'}`} /><motion.span animate={{ opacity: 1, y: 0 }} className={`font-mono text-[11px] font-bold uppercase tracking-[0.07em] ${status.color}`}>{status.label}</motion.span></div>
+          <span className="hidden font-mono text-[11px] uppercase tracking-[0.05em] text-ink-muted sm:block">{status.detail}</span>
         </div>
         <div className="mt-2 grid grid-cols-4 gap-1">{states.map((_, index) => <span key={index} className={`h-0.5 rounded-full transition-colors duration-500 ${index <= phase ? 'bg-cyan-deep' : 'bg-ink/10'}`} />)}</div>
       </div>
