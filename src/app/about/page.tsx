@@ -53,7 +53,7 @@ export default function AboutPage() {
                 Intelligence that can <GradientText>show its work.</GradientText>
               </h1>
               <p className="mt-6 text-lg text-text-on-dark-muted max-w-2xl leading-relaxed">
-                Aprilio builds structurally grounded retrieval infrastructure for knowledge that must stay current, traceable, and certain.
+                Aprilio builds structurally grounded retrieval infrastructure for knowledge that must stay current, traceable, and bounded.
               </p>
             </AnimateOnScroll>
           </Container>

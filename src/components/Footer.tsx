@@ -18,7 +18,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="mt-5 max-w-sm text-sm leading-6 text-ink-muted">
-              Structurally grounded retrieval for knowledge that must be current, traceable, and certain.
+              Grounded retrieval for knowledge that must stay current, traceable, and bounded.
             </p>
           </div>
 

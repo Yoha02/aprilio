@@ -25,16 +25,14 @@ export default function ProofSection() {
   return (
     <section id="evidence" className="bg-paper py-24 sm:py-32">
       <Container>
-        <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:items-end">
+        <div className="grid gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-end">
           <div>
             <p className="eyebrow text-cyan-deep">Trace, don’t trust</p>
-            <h2 className="mt-5 text-4xl font-semibold leading-[1.02] tracking-[-0.05em] text-ink sm:text-5xl lg:text-6xl">
-              The answer is only as useful as the path back to truth.
-            </h2>
+            <h2 className="mt-5 text-4xl font-semibold leading-[1.02] tracking-[-0.05em] text-ink sm:text-5xl lg:text-6xl">See the difference evidence makes.</h2>
           </div>
           <div className="lg:pb-2">
             <p className="max-w-2xl text-lg leading-8 text-ink-muted">
-              Generic models collapse the distance between “sounds plausible” and “is supported.” Aprilio keeps that distance visible, source by source, page by page, update by update.
+              Compare a plausible answer with one that preserves its sources, updates, and uncertainty boundary.
             </p>
           </div>
         </div>

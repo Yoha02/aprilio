@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Container from '@/components/ui/Container'
 import { applications, team } from '@/content/site'
 
@@ -6,7 +7,7 @@ export default function TeamSection() {
     <>
       <section id="applications" className="bg-paper py-24 sm:py-32">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-end">
+          <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
             <div>
               <p className="eyebrow text-cyan-deep">Enterprise infrastructure</p>
               <h2 className="mt-5 text-4xl font-semibold leading-[1.02] tracking-[-0.05em] text-ink sm:text-5xl lg:text-6xl">
@@ -14,7 +15,7 @@ export default function TeamSection() {
               </h2>
             </div>
             <p className="max-w-2xl text-lg leading-8 text-ink-muted lg:pb-2">
-              Aprilio’s commercial model is built around licensing and integration: adapt the harness to a knowledge base, expose it through a platform or API, and preserve its source logic as the data changes.
+              License the knowledge layer, integrate it into a platform, or deploy it inside a governed clinical workflow.
             </p>
           </div>
 
@@ -28,7 +29,7 @@ export default function TeamSection() {
                 <div className="relative">
                   <span className="grid h-11 w-11 place-items-center rounded-2xl bg-white font-mono text-xs font-bold text-ink shadow-sm">{application.index}</span>
                   <h3 className="mt-10 text-2xl font-semibold tracking-[-0.04em] text-ink">{application.title}</h3>
-                  <p className="mt-4 min-h-[96px] text-sm leading-6 text-ink-muted">{application.description}</p>
+                  <p className="mt-4 min-h-[84px] text-base leading-7 text-ink-muted">{application.description}</p>
                   <div className="mt-7 flex flex-wrap gap-2">
                     {application.tags.map((tag) => (
                       <span key={tag} className="rounded-full border border-ink/10 bg-white/55 px-2.5 py-1.5 font-mono text-[8px] uppercase tracking-wider text-ink-muted">{tag}</span>
@@ -41,14 +42,14 @@ export default function TeamSection() {
         </Container>
       </section>
 
-      <section className="border-t border-ink/10 bg-bg py-20 sm:py-24">
+      <section className="border-t border-ink/10 bg-bg py-16 sm:py-20">
         <Container>
           <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="eyebrow text-ink-faint">Built across disciplines</p>
               <h2 className="mt-4 text-3xl font-semibold tracking-[-0.045em] text-ink sm:text-4xl">Clinical judgment meets systems engineering.</h2>
             </div>
-            <p className="max-w-md text-sm leading-6 text-ink-muted">Founded by a medical oncologist, cloud architect, product builder, and academic operator.</p>
+            <Link href="/about" className="text-sm font-semibold text-ink transition-colors hover:text-cyan-deep">Meet the team <span aria-hidden="true">↗</span></Link>
           </div>
 
           <div className="mt-10 grid gap-px overflow-hidden rounded-[24px] border border-ink/10 bg-ink/10 sm:grid-cols-2 lg:grid-cols-4">
@@ -60,7 +61,7 @@ export default function TeamSection() {
                 </div>
                 <h3 className="mt-8 text-base font-semibold text-ink">{person.name}</h3>
                 <p className="mt-1 font-mono text-[9px] uppercase tracking-wider text-cyan-deep">{person.role}</p>
-                <p className="mt-4 text-sm leading-6 text-ink-muted">{person.bio}</p>
+                <p className="mt-4 text-sm leading-6 text-ink-muted sm:hidden lg:block">{person.bio}</p>
               </article>
             ))}
           </div>

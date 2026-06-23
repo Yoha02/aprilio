@@ -1,7 +1,9 @@
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import Hero from '@/components/landing/Hero'
+import TrustStrip from '@/components/landing/TrustStrip'
 import LiveTraceSection from '@/components/landing/LiveTraceSection'
+import WhyAprilio from '@/components/landing/WhyAprilio'
 import ProofSection from '@/components/landing/ProofSection'
 import HowItWorks from '@/components/landing/HowItWorks'
 import WhyItMatters from '@/components/landing/WhyItMatters'
@@ -21,9 +23,11 @@ export default function Home() {
       <Navigation />
       <main>
         <Hero />
+        <TrustStrip />
         <LiveTraceSection />
-        <ProofSection />
+        <WhyAprilio />
         <HowItWorks />
+        <ProofSection />
         <WhyItMatters />
         <TeamSection />
         <PartnersCTA />

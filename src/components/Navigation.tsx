@@ -63,7 +63,7 @@ export default function Navigation() {
 
         <div className="hidden md:block">
           <Link href="/contact" className="button-link button-link-dark text-sm">
-            Start a conversation
+            Request a demo
             <span aria-hidden="true">↗</span>
           </Link>
         </div>
@@ -106,7 +106,7 @@ export default function Navigation() {
                 onClick={() => setMobileOpen(false)}
                 className="button-link button-link-dark mt-2 justify-center"
               >
-                Start a conversation <span aria-hidden="true">↗</span>
+                Request a demo <span aria-hidden="true">↗</span>
               </Link>
             </nav>
           </motion.div>

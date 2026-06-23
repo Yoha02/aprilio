@@ -7,7 +7,6 @@ import Footer from '@/components/Footer'
 import Container from '@/components/ui/Container'
 import AnimateOnScroll from '@/components/ui/AnimateOnScroll'
 import GlowCard from '@/components/ui/GlowCard'
-import GradientText from '@/components/ui/GradientText'
 import Button from '@/components/ui/Button'
 import { submitContactForm, type ContactFormState } from './actions'
 
@@ -30,18 +29,17 @@ export default function ContactPage() {
       <Navigation />
       <main>
         {/* Hero */}
-        <section className="relative bg-dark-surface pt-32 pb-20 overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(247,183,49,0.06),transparent_60%)]" />
+        <section className="hero-light relative overflow-hidden pb-20 pt-32">
+          <div className="hero-aurora absolute inset-0" aria-hidden="true" />
+          <div className="hero-noise absolute inset-0 opacity-[0.06]" aria-hidden="true" />
           <Container className="relative">
             <AnimateOnScroll>
-              <p className="text-sm font-semibold uppercase tracking-wider text-teal mb-4">
-                Contact
-              </p>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white font-[family-name:var(--font-heading)]">
-                Start a <GradientText from="from-gold" to="to-teal">Technical Conversation</GradientText>
+              <p className="eyebrow text-cyan-deep">Talk to our team</p>
+              <h1 className="mt-5 max-w-3xl text-5xl font-semibold leading-[1.02] tracking-[-0.055em] text-ink sm:text-6xl lg:text-7xl">
+                Request a product walkthrough.
               </h1>
-              <p className="mt-6 text-lg text-text-on-dark-muted max-w-2xl leading-relaxed">
-                Tell us about the knowledge system, platform, or research problem you&rsquo;re working on.
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-ink-muted">
+                Tell us about your knowledge system, clinical workflow, or partnership opportunity.
               </p>
             </AnimateOnScroll>
           </Container>
@@ -144,7 +142,7 @@ export default function ContactPage() {
                         className="w-full"
                         disabled={isPending}
                       >
-                        {isPending ? 'Sending...' : 'Send Message'}
+                        {isPending ? 'Sending...' : 'Request a Demo'}
                       </Button>
                     </form>
                   )}
@@ -192,7 +190,7 @@ export default function ContactPage() {
                         <ul className="text-sm text-text-secondary space-y-2">
                           <li className="flex items-start gap-2">
                             <span className="text-teal mt-0.5">&#10003;</span>
-                            Response within 24 hours
+                            Use-case and integration review
                           </li>
                           <li className="flex items-start gap-2">
                             <span className="text-teal mt-0.5">&#10003;</span>

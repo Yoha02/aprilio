@@ -14,11 +14,11 @@ export default function PartnersCTA() {
               Your knowledge already has structure. Let’s make it usable.
             </h2>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-ink-muted">
-              We’re speaking with clinical knowledge publishers, platform teams, health systems, and research partners building AI for high-stakes decisions.
+              Bring your changing medical knowledge into a system teams can inspect, integrate, and trust.
             </p>
             <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
-              <Link href="/contact" className="button-link button-link-dark">Start a technical conversation <span aria-hidden="true">↗</span></Link>
-              <Link href="/paper" className="button-link button-link-light">Read the research <span aria-hidden="true">→</span></Link>
+              <Link href="/contact" className="button-link button-link-dark">Request a demo <span aria-hidden="true">↗</span></Link>
+              <Link href="/contact?interest=partnership" className="button-link button-link-light">Partner with us <span aria-hidden="true">→</span></Link>
             </div>
           </div>
         </div>

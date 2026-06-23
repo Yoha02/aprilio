@@ -107,7 +107,9 @@ export default function KnowledgeGravity() {
         {Array.from({ length: 18 }).map((_, index) => {
           const angle = (index / 18) * Math.PI * 2
           const radius = index % 2 === 0 ? 304 : 232
-          return <circle key={index} cx={360 + Math.cos(angle) * radius} cy={364 + Math.sin(angle) * radius} r={index % 3 === 0 ? 2 : 1.2} fill="#102542" fillOpacity={index % 3 === 0 ? '.28' : '.14'} />
+          const cx = Number((360 + Math.cos(angle) * radius).toFixed(3))
+          const cy = Number((364 + Math.sin(angle) * radius).toFixed(3))
+          return <circle key={index} cx={cx} cy={cy} r={index % 3 === 0 ? 2 : 1.2} fill="#102542" fillOpacity={index % 3 === 0 ? '.28' : '.14'} />
         })}
       </motion.svg>
 

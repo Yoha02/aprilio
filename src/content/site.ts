@@ -1,6 +1,6 @@
 export const siteNavigation = [
   { href: '/#live-trace', label: 'See it work' },
-  { href: '/#engine', label: 'Technology' },
+  { href: '/#engine', label: 'Architecture' },
   { href: '/#evidence', label: 'Evidence' },
   { href: '/#applications', label: 'Applications' },
 ]
@@ -39,25 +39,25 @@ export const architectureStages = [
     title: 'Map the hidden structure',
     agent: 'Cartographer agent',
     description:
-      'Aprilio reads an unfamiliar knowledge base the way an expert would: locating tables of contents, headers, indexes, and decision pathways before retrieval begins.',
+      'Reads the source hierarchy before retrieval begins, preserving sections, pathways, and decision logic.',
     output: 'Structural blueprint',
   },
   {
     number: '02',
     eyebrow: 'The artifact',
-    title: 'Build the Ontoharness',
-    agent: 'Semantic annotator',
+    title: 'Build a reusable source map',
+    agent: 'Ontoharness',
     description:
-      'Clinical intent is mapped onto the source structure, creating a durable retrieval harness with navigation rules, semantic relationships, and traceable extraction logic.',
+      'Maps clinical intent onto that structure to create reusable navigation and evidence rules.',
     output: 'Dataset-specific harness',
   },
   {
     number: '03',
     eyebrow: 'The action',
-    title: 'Retrieve a Factum',
-    agent: 'Architect agent',
+    title: 'Issue a source-linked answer',
+    agent: 'Factum',
     description:
-      'Grounded Adaptive Retrieval assembles the relevant evidence, checks fresh external updates, and returns a coherent answer with exact provenance—or stops.',
+      'Retrieves by structure, checks fresh updates, and returns an answer with exact provenance or stops.',
     output: 'Verified, current Factum',
   },
 ]
@@ -67,21 +67,21 @@ export const applications = [
     index: 'A',
     title: 'Clinical knowledge publishers',
     description:
-      'Turn living guideline libraries into a traceable intelligence layer without flattening their decision logic into vector chunks.',
+      'Turn changing guideline libraries into traceable, licensable intelligence without flattening their decision logic.',
     tags: ['Licensing', 'White-label', 'Dataset harnesses'],
   },
   {
     index: 'B',
     title: 'Health systems',
     description:
-      'Give care teams current, source-linked guidance while preserving the boundaries, governance, and audit trail enterprise medicine requires.',
+      'Give care teams current guidance with the evidence boundaries and audit trail enterprise medicine requires.',
     tags: ['Private deployment', 'Auditability', 'Workflow integration'],
   },
   {
     index: 'C',
     title: 'AI & clinical platforms',
     description:
-      'Add deterministic retrieval, component-level failure attribution, and closed-loop harness regeneration to an existing AI product.',
+      'Add grounded retrieval, failure attribution, and auditable answers to an existing AI product.',
     tags: ['API layer', 'Model agnostic', 'Safety tooling'],
   },
 ]
