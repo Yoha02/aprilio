@@ -19,7 +19,7 @@ export default function TrustStrip() {
           {signals.map((signal) => (
             <div key={signal.label} className="border-b border-ink/10 px-6 py-5 last:border-b-0 lg:border-b-0 lg:border-r lg:last:border-r-0">
               <p className="text-3xl font-semibold tracking-[-0.055em] text-ink">{signal.value}</p>
-              <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.1em] text-ink-faint">{signal.label}</p>
+              <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-faint">{signal.label}</p>
             </div>
           ))}
         </div>

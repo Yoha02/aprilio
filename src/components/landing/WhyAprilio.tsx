@@ -27,7 +27,7 @@ export default function WhyAprilio() {
             <motion.article key={reason.title} initial={{ opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.55, delay: index * 0.08 }} className="group rounded-[24px] border border-ink/10 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
               <div className="flex items-center justify-between">
                 <span className={`grid h-12 w-12 place-items-center rounded-2xl ${reason.color} font-mono text-lg font-bold text-ink`}>{reason.icon}</span>
-                <span className="font-mono text-[10px] font-bold tracking-[0.12em] text-ink-faint">{reason.number}</span>
+                <span className="font-mono text-[11px] font-bold tracking-[0.1em] text-ink-faint">{reason.number}</span>
               </div>
               <h3 className="mt-9 text-2xl font-semibold tracking-[-0.04em] text-ink">{reason.title}</h3>
               <p className="mt-3 text-base leading-7 text-ink-muted">{reason.description}</p>

@@ -17,7 +17,7 @@ export default function LiveTraceSection() {
           </div>
           <div className="lg:pb-2">
             <p className="max-w-xl text-lg leading-8 text-ink-muted">Follow one clinical question from changing sources to a verified, bounded answer.</p>
-            <div className="mt-6 flex flex-wrap gap-2 font-mono text-[9px] uppercase tracking-[0.1em] text-ink-faint">
+            <div className="mt-6 flex flex-wrap gap-2 font-mono text-[10px] uppercase tracking-[0.08em] text-ink-faint">
               {['Input', 'Structure', 'Recency', 'Verified output'].map((item, index) => <span key={item} className="flex items-center gap-2 rounded-full border border-ink/10 bg-white/60 px-3 py-2"><b className="text-cyan-deep">0{index + 1}</b>{item}</span>)}
             </div>
           </div>

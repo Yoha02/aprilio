@@ -42,13 +42,13 @@ export default function HowItWorks() {
                   <span className="eyebrow text-ink-faint">{stage.eyebrow}</span>
                 </div>
                 <div className="mt-9">
-                  <p className="font-mono text-[10px] font-bold uppercase tracking-[0.12em] text-cyan-deep">{stage.agent}</p>
+                  <p className="font-mono text-sm font-bold uppercase tracking-[0.09em] text-cyan-deep">{stage.agent}</p>
                   <h3 className="mt-3 text-2xl font-semibold tracking-[-0.035em] text-ink">{stage.title}</h3>
                   <p className="mt-4 text-base leading-7 text-ink-muted">{stage.description}</p>
                 </div>
                 <div className="mt-7 flex items-center justify-between rounded-xl bg-mist px-3 py-3">
-                  <span className="font-mono text-[9px] uppercase tracking-wider text-ink-faint">Output</span>
-                  <span className="text-xs font-semibold text-ink">{stage.output}</span>
+                  <span className="font-mono text-[10px] uppercase tracking-wider text-ink-faint">Output</span>
+                  <span className="text-sm font-semibold text-ink">{stage.output}</span>
                 </div>
               </motion.article>
             ))}

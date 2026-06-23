@@ -33,7 +33,7 @@ export default function WhyItMatters() {
                 <p className="eyebrow text-cyan-deep">Aprilio / internal test</p>
                 <p className="mt-3 text-5xl font-semibold tracking-[-0.06em] text-ink sm:text-6xl">20/20</p>
               </div>
-              <span className="rounded-full bg-success/10 px-3 py-2 font-mono text-[9px] font-bold uppercase tracking-wider text-success">stable</span>
+              <span className="rounded-full bg-success/10 px-3 py-2 font-mono text-[10px] font-bold uppercase tracking-wider text-success">stable</span>
             </div>
             <p className="mt-4 max-w-md text-base leading-7 text-ink-muted">Detected the late-breaking update and returned exact provenance on every run.</p>
             <div className="mt-7"><RunGrid success /></div>
@@ -45,7 +45,7 @@ export default function WhyItMatters() {
                 <p className="eyebrow text-ink-faint">Evaluated comparison lanes</p>
                 <p className="mt-3 text-5xl font-semibold tracking-[-0.06em] text-ink/55 sm:text-6xl">0/20</p>
               </div>
-              <span className="rounded-full bg-coral/10 px-3 py-2 font-mono text-[9px] font-bold uppercase tracking-wider text-coral">update missed</span>
+              <span className="rounded-full bg-coral/10 px-3 py-2 font-mono text-[10px] font-bold uppercase tracking-wider text-coral">update missed</span>
             </div>
             <p className="mt-4 max-w-md text-base leading-7 text-ink-muted">Missed the newly approved regimen and returned inconsistent citation behavior.</p>
             <div className="mt-7"><RunGrid success={false} /></div>
@@ -60,10 +60,10 @@ export default function WhyItMatters() {
               <p className="mt-1 text-sm leading-6 text-ink-muted">The system preserves a visible boundary when a required node or pathway is absent.</p>
             </div>
           </div>
-          <span className="shrink-0 rounded-full border border-ink/10 px-3 py-2 font-mono text-[9px] uppercase tracking-wider text-ink-faint">auditable halt state</span>
+          <span className="shrink-0 rounded-full border border-ink/10 px-3 py-2 font-mono text-[10px] uppercase tracking-wider text-ink-faint">auditable halt state</span>
         </div>
 
-        <p className="mt-4 font-mono text-[9px] uppercase tracking-wider text-ink-faint">Internal evaluation: one complex AML question repeated at temperature 0.3. External validation pending.</p>
+        <p className="mt-4 font-mono text-[10px] uppercase tracking-wider text-ink-faint">Internal evaluation: one complex AML question repeated at temperature 0.3. External validation pending.</p>
       </Container>
     </section>
   )

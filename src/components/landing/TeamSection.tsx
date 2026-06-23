@@ -32,7 +32,7 @@ export default function TeamSection() {
                   <p className="mt-4 min-h-[84px] text-base leading-7 text-ink-muted">{application.description}</p>
                   <div className="mt-7 flex flex-wrap gap-2">
                     {application.tags.map((tag) => (
-                      <span key={tag} className="rounded-full border border-ink/10 bg-white/55 px-2.5 py-1.5 font-mono text-[8px] uppercase tracking-wider text-ink-muted">{tag}</span>
+                      <span key={tag} className="rounded-full border border-ink/10 bg-white/55 px-3 py-2 font-mono text-[10px] uppercase tracking-wider text-ink-muted">{tag}</span>
                     ))}
                   </div>
                 </div>
@@ -60,7 +60,7 @@ export default function TeamSection() {
                   <span className="h-2 w-2 rounded-full bg-factum" />
                 </div>
                 <h3 className="mt-8 text-base font-semibold text-ink">{person.name}</h3>
-                <p className="mt-1 font-mono text-[9px] uppercase tracking-wider text-cyan-deep">{person.role}</p>
+                <p className="mt-1 font-mono text-[11px] uppercase tracking-wider text-cyan-deep">{person.role}</p>
                 <p className="mt-4 text-sm leading-6 text-ink-muted sm:hidden lg:block">{person.bio}</p>
               </article>
             ))}
